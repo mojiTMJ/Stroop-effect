@@ -72,7 +72,7 @@
         <Param name="name" updates="None" val="text" valType="code"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
         <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="text" updates="constant" val="Thank you for participat this experminet&amp;#10;&amp;#10;(you have been in Group B)&amp;#10;&amp;#10;Jalalledin Taavoni&amp;#10;Fall 2017 ES-Aarhus&amp;#10;&amp;#10;Press Enter" valType="str"/>
+        <Param name="text" updates="constant" val="Thank you for participat this experminet&amp;#10;&amp;#10;(you have been in Group B)&amp;#10;&amp;#10;Fall 2017 ES-Aarhus&amp;#10;&amp;#10;Press Enter" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
