@@ -1,14 +1,5 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-"""
-This experiment was created using PsychoPy2 Experiment Builder (v1.85.3),
-    on Sat 10 Feb 2018 05:12:35 PM CET
-If you publish work using this script please cite the PsychoPy publications:
-    Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
-        Journal of Neuroscience Methods, 162(1-2), 8-13.
-    Peirce, JW (2009) Generating stimuli for neuroscience using PsychoPy.
-        Frontiers in Neuroinformatics, 2:10. doi: 10.3389/neuro.11.010.2008
-"""
 
 from __future__ import absolute_import, division
 from psychopy import locale_setup, sound, gui, visual, core, data, event, logging
@@ -69,7 +60,7 @@ instructionsClock = core.Clock()
 instrText = visual.TextStim(win=win, name='instrText',
     text='Welcome to Stroop Test\nRemember, choose the Color of the text, ignoring the word.\n\nInstruction:\nr = red\nb = blue\ng = green\ny = yellow\n\nPress any key to continue ...',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0,
     color='white', colorSpace='rgb', opacity=1,
     depth=0.0);
 
@@ -78,22 +69,22 @@ trialClock = core.Clock()
 targe = visual.TextStim(win=win, name='targe',
     text='default text',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0,
     color=1.0, colorSpace='rgb', opacity=1,
     depth=0.0);
 
 # Initialize components for Routine "thanks"
 thanksClock = core.Clock()
 text = visual.TextStim(win=win, name='text',
-    text='Thank you for participat this experminet\n\n(you have been in Group A)\n\nJalalledin Taavoni\nFall 2017 ES-Aarhus\n\nPress Enter',
+    text='Thank you for participat this experminet\n\n(you have been in Group A)\n\nFall 2017 ES-Aarhus\n\nPress Enter',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0,
     color='white', colorSpace='rgb', opacity=1,
     depth=0.0);
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
-routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine 
+routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine
 
 # ------Prepare to start Routine "instructions"-------
 t = 0
@@ -114,14 +105,14 @@ while continueRoutine:
     t = instructionsClock.getTime()
     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
     # update/draw components on each frame
-    
+
     # *instrText* updates
     if t >= 0.0 and instrText.status == NOT_STARTED:
         # keep track of start time/frame for later
         instrText.tStart = t
         instrText.frameNStart = frameN  # exact frame index
         instrText.setAutoDraw(True)
-    
+
     # *instraction* updates
     if t >= 0.0 and instraction.status == NOT_STARTED:
         # keep track of start time/frame for later
@@ -131,14 +122,14 @@ while continueRoutine:
         # keyboard checking is just starting
     if instraction.status == STARTED:
         theseKeys = event.getKeys()
-        
+
         # check for quit:
         if "escape" in theseKeys:
             endExpNow = True
         if len(theseKeys) > 0:  # at least one key was pressed
             # a response ends the routine
             continueRoutine = False
-    
+
     # check if all components have finished
     if not continueRoutine:  # a component has requested a forced-end of Routine
         break
@@ -147,11 +138,11 @@ while continueRoutine:
         if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
             continueRoutine = True
             break  # at least one component has not yet finished
-    
+
     # check for quit (the Esc key)
     if endExpNow or event.getKeys(keyList=["escape"]):
         core.quit()
-    
+
     # refresh the screen
     if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
         win.flip()
@@ -164,7 +155,7 @@ for thisComponent in instructionsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials = data.TrialHandler(nReps=1, method='sequential', 
+trials = data.TrialHandler(nReps=1, method='sequential',
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('groupAIF.xlsx'),
     seed=None, name='trials')
@@ -181,7 +172,7 @@ for thisTrial in trials:
     if thisTrial != None:
         for paramName in thisTrial.keys():
             exec(paramName + '= thisTrial.' + paramName)
-    
+
     # ------Prepare to start Routine "trial"-------
     t = 0
     trialClock.reset()  # clock
@@ -196,14 +187,14 @@ for thisTrial in trials:
     for thisComponent in trialComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
-    
+
     # -------Start Routine "trial"-------
     while continueRoutine:
         # get current time
         t = trialClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
-        
+
         # *targe* updates
         if t >= 0.5 and targe.status == NOT_STARTED:
             # keep track of start time/frame for later
@@ -213,7 +204,7 @@ for thisTrial in trials:
         frameRemains = 0.5 + 5- win.monitorFramePeriod * 0.75  # most of one frame period left
         if targe.status == STARTED and t >= frameRemains:
             targe.setAutoDraw(False)
-        
+
         # *response* updates
         if t >= 0.5 and response.status == NOT_STARTED:
             # keep track of start time/frame for later
@@ -225,7 +216,7 @@ for thisTrial in trials:
             event.clearEvents(eventType='keyboard')
         if response.status == STARTED:
             theseKeys = event.getKeys(keyList=['r', 'b', 'g', 'y'])
-            
+
             # check for quit:
             if "escape" in theseKeys:
                 endExpNow = True
@@ -239,7 +230,7 @@ for thisTrial in trials:
                     response.corr = 0
                 # a response ends the routine
                 continueRoutine = False
-        
+
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
             break
@@ -248,15 +239,15 @@ for thisTrial in trials:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
-        
+
         # check for quit (the Esc key)
         if endExpNow or event.getKeys(keyList=["escape"]):
             core.quit()
-        
+
         # refresh the screen
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
-    
+
     # -------Ending Routine "trial"-------
     for thisComponent in trialComponents:
         if hasattr(thisComponent, "setAutoDraw"):
@@ -277,7 +268,7 @@ for thisTrial in trials:
     # the Routine "trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     thisExp.nextEntry()
-    
+
 # completed 1 repeats of 'trials'
 
 
@@ -300,14 +291,14 @@ while continueRoutine:
     t = thanksClock.getTime()
     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
     # update/draw components on each frame
-    
+
     # *text* updates
     if t >= 0.0 and text.status == NOT_STARTED:
         # keep track of start time/frame for later
         text.tStart = t
         text.frameNStart = frameN  # exact frame index
         text.setAutoDraw(True)
-    
+
     # *thank* updates
     if t >= 0.0 and thank.status == NOT_STARTED:
         # keep track of start time/frame for later
@@ -318,7 +309,7 @@ while continueRoutine:
         thank.clock.reset()  # now t=0
     if thank.status == STARTED:
         theseKeys = event.getKeys()
-        
+
         # check for quit:
         if "escape" in theseKeys:
             endExpNow = True
@@ -327,7 +318,7 @@ while continueRoutine:
             thank.rt = thank.clock.getTime()
             # a response ends the routine
             continueRoutine = False
-    
+
     # check if all components have finished
     if not continueRoutine:  # a component has requested a forced-end of Routine
         break
@@ -336,11 +327,11 @@ while continueRoutine:
         if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
             continueRoutine = True
             break  # at least one component has not yet finished
-    
+
     # check for quit (the Esc key)
     if endExpNow or event.getKeys(keyList=["escape"]):
         core.quit()
-    
+
     # refresh the screen
     if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
         win.flip()
